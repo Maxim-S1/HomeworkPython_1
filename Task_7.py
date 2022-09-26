@@ -1,25 +1,17 @@
 # Напишите программу для. проверки истинности утверждения 
 # ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 
-def inputNumbers(x):
-    xyz = ["X", "Y", "Z"]
-    a = []
-    for i in range(x):
-        a.append(input(f"Введите значение {xyz[i]}: "))
-    return a
+x = int(input('Введите число X '))
+y = int(input('Введите число Y '))
+z = int(input('Введите число Z '))
 
+leftPart = not (x or y or z)
+rightPart = not x and not y and not z
+result = leftPart == rightPart
 
-def checkPredicate(x):
-    left = not (x[0] or x[1] or x[2])
-    right = not x[0] and not x[1] and not x[2]
-    result = left == right
-    return result
-
-
-statement = inputNumbers(3)
-
-if checkPredicate(statement) == True:
-    print(f"Утверждение истинно")
+if result == True:
+    print('Утверждение истинно')
 else:
-    print(f"Утверждение ложно")
+    print('Утверждение ложно')
+
 
